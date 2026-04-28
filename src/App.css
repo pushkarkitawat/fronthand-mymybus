@@ -1,0 +1,46 @@
+/*
+  brand.css
+  ─────────────────────────────────────────────────────────────────────────────
+  CSS custom properties derived from brandConfig.js.
+  Import ONCE at the top of index.js or App.js:
+      import './brand.css';
+
+  To change a color, edit brandConfig.js — NOT this file directly.
+  If you want to override without touching brandConfig, you can still
+  re-declare any variable in a more specific selector.
+  ─────────────────────────────────────────────────────────────────────────────
+*/
+
+:root {
+  --bb-primary:          #2f80ed;
+  --bb-secondary:        #3aa0ff;
+  --bb-accent:           #87CEEB;
+  --bb-header-grad:      linear-gradient(90deg, var(--bb-primary), var(--bb-secondary));
+  --bb-login-grad:       linear-gradient(135deg, var(--bb-primary), var(--bb-secondary));
+  --bb-page-bg:          #f4f6fb;
+  --bb-sidebar-bg:       #f3f3f3;
+  --bb-sidebar-text:     #0d5bc2;
+  --bb-text-dark:        #0b2546;
+  --bb-card-bg:          #ffffff;
+  --bb-font:             'Segoe UI', Tahoma, sans-serif;
+
+  /* Derived helpers */
+  --bb-primary-10:       color-mix(in srgb, var(--bb-primary) 10%, transparent);
+  --bb-primary-15:       color-mix(in srgb, var(--bb-primary) 15%, transparent);
+  --bb-primary-25:       color-mix(in srgb, var(--bb-primary) 25%, transparent);
+  --bb-primary-40:       color-mix(in srgb, var(--bb-primary) 40%, transparent);
+  --bb-primary-55:       color-mix(in srgb, var(--bb-primary) 55%, transparent);
+  --bb-accent-50:        color-mix(in srgb, var(--bb-accent) 50%, transparent);
+  --bb-accent-88:        color-mix(in srgb, var(--bb-accent) 88%, transparent);
+}
+
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  margin: 0;
+  display: block;
+  font-family: var(--bb-font);
+  background: var(--bb-page-bg);
+}

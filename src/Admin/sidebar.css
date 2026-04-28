@@ -1,0 +1,117 @@
+/* sidebar.css — uses brand CSS variables from brand.css */
+
+.bar {
+  width: clamp(200px, 250px, 300px);
+  background-color: var(--bb-sidebar-bg);
+  height: 100vh;
+  margin: 0;
+  z-index: 10;
+  position: absolute;
+  box-shadow: 0px 2px 20px rgb(187, 187, 187);
+  font-family: var(--bb-font);
+}
+
+/* ── Animated left-edge bar ── */
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@property --height {
+  syntax: "<percentage>";
+  initial-value: 0%;
+  inherits: false;
+}
+
+.bar::before {
+  content: '';
+  z-index: -1;
+  width: 1%;
+  height: 0%;
+  left: 250px;
+  position: absolute;
+  background-color: var(--bb-accent);
+  animation: roll 2s linear forwards;
+  display: block;
+}
+
+/* ── Brand header ── */
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 18px 0;
+}
+
+.sidebar-logo-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 2px solid var(--bb-primary-25);
+}
+
+.sidebar-logo-text {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--bb-header-grad);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 1px;
+  flex-shrink: 0;
+}
+
+.bar h2 {
+  justify-self: center;
+  color: var(--bb-sidebar-text);
+  letter-spacing: 1px;
+  font-family: var(--bb-font);
+  margin: 0;
+}
+
+/* ── Nav links ── */
+.links {
+  position: relative;
+  height: 600px;
+  top: 20px;
+  left: -30px;
+  display: block;
+}
+
+.links ul li {
+  text-decoration: none;
+  list-style: none;
+  position: relative;
+  padding: 5px;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.link {
+  text-decoration: none;
+  color: rgb(46, 45, 45);
+}
+
+.link:hover {
+  color: var(--bb-primary);
+}
+
+.link span {
+  margin-right: 5px;
+  padding: 10px;
+  position: relative;
+  font-size: 25px;
+}
+
+@keyframes roll {
+  from { height: 0%; }
+  to   { height: 100%; }
+}

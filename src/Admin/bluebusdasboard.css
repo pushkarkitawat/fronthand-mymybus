@@ -1,0 +1,143 @@
+/* bluebusdasboard.css — uses brand CSS variables from brand.css */
+
+.dashboard {
+  width: 100vw;
+  
+  
+  top: 20px;
+  height: 280px;
+  border: 1px solid rgb(202, 201, 201);
+  position: relative;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-family: var(--bb-font);
+}
+
+.dash {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  width: 1460px;
+  height: 100vh;
+  max-height: 100vh;
+  overflow-y: scroll;
+  position: relative;
+  left: 0px;
+  background-color: var(--bb-page-bg);
+}
+
+#backbutton {
+  position: relative;
+  left: 75%;
+  top: -30px;
+}
+
+.dashboard-navbar {
+  position: relative;
+  display: flex;
+  top: 1px;
+  box-shadow: 1px 1px 10px rgba(22, 22, 22, 0.453);
+  z-index: 9;
+  width: 1450px;
+  height: 30px;
+  padding: 10px;
+  background-color: var(--bb-accent-88);
+  left: 240px;
+  align-items: center;
+  border-radius: 0px 0px 10px 0px;
+  justify-content: space-between;
+}
+
+.dashboard-title {
+  font-size: 24px;
+  font-weight: bold;
+  position: relative;
+  left: 50px;
+  margin-bottom: 20px;
+  font-family: var(--bb-font);
+}
+
+.dashboard-option {
+  display: grid;
+  position: relative;
+  grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+  width: 250px;
+  gap: 20px;
+  top: -5px;
+}
+
+.dashboard-btn {
+  flex: 0 1 auto;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  padding: 5px;
+  border: none;
+  border-radius: 12px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.dashboard-btn:hover { transform: translateY(-1px); }
+
+/* ── Stats ── */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: var(--bb-card-bg);
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card:hover { box-shadow: 0 2px 6px rgba(0, 0, 0, 0.238); }
+
+.stat-icon { font-size: 28px; color: var(--bb-primary); }
+
+.stat-card h4 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #ff9800;
+}
+
+/* ── Activity feed ── */
+.activities {
+  background: var(--bb-card-bg);
+  padding: 16px;
+  width: 500px;
+  top: 20px;
+  position: relative;
+  left: 50px;
+  overflow-y: scroll;
+  height: 250px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.activities-title {
+  font-size: 18px;
+  position: relative;
+  font-weight: 700;
+  left: 20px;
+  margin-bottom: 10px;
+}
+
+.activities ul { list-style: disc inside; color: #444; height: 200px; }
+.activities li { margin: 6px 0; overflow-y: scroll; }
+
+/* ── Graph ── */
+.graph {
+  top: 0;
+  position: relative;
+  left: 30px;
+  min-width: 1400px;
+  height: 600px;
+}
